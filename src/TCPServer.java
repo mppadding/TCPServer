@@ -51,10 +51,17 @@ public class TCPServer implements Runnable {
     }
 
     private void news(String location) {
-        InputStream is = HTTPSClient.fetchURL(_url + location);
-        ArrayList<NewsItem> items = RSSParser.parse(is);
+        ArrayList<NewsItem> items;
 
-        if(items.size() == 0) {
+        if(Cache.inCache(location)) {
+            items = Cache.fetch(location);
+        } else {
+            InputStream is = HTTPSClient.fetchURL(_url + location);
+            items = RSSParser.parse(is);
+            Cache.addCache(location, items);
+        }
+
+        if(items == null || items.size() == 0) {
             display("Unknown location or no news found.\n");
             return;
         }

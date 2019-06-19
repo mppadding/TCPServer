@@ -14,11 +14,11 @@ and shutdown the server, exiting the program. Clients can connect to the TCP ser
 # Commands
 ## Help
 Help returns the usage and description of all implemented commands. Example output:
-> Help for News server:
-> help            Runs this command
-> news {location} Gives news about {location}
-> ping            Pong!
-> quit            Aborts the connection
+> Help for News server:  
+> help            Runs this command  
+> news {location} Gives news about {location}  
+> ping            Pong!  
+> quit            Aborts the connection  
 
 ## Ping
 Returns pong! Can be used to test if the server is still online and responding

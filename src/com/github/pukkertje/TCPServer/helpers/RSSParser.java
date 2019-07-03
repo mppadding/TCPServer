@@ -1,3 +1,7 @@
+package com.github.pukkertje.TCPServer.helpers;
+
+import com.github.pukkertje.TCPServer.server.model.NewsItem;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

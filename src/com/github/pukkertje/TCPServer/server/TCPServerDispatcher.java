@@ -1,3 +1,5 @@
+package com.github.pukkertje.TCPServer.server;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,15 +15,16 @@ public class TCPServerDispatcher implements Runnable {
         socket = new ServerSocket(_port);
     }
 
+    
     public void run() {
         System.out.println("Accepting connections on port " + _port);
         try {
             while (true) {
                 Socket client = socket.accept();
+
                 System.out.println("Client connected from " + client.getInetAddress().getHostAddress());
 
                 TCPServer tcp = new TCPServer(client);
-
                 _servers.add(tcp);
 
                 new Thread(tcp).start();

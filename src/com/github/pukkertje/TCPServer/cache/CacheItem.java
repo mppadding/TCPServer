@@ -1,3 +1,7 @@
+package com.github.pukkertje.TCPServer.cache;
+
+import com.github.pukkertje.TCPServer.server.model.NewsItem;
+
 import java.time.Instant;
 import java.util.ArrayList;
 

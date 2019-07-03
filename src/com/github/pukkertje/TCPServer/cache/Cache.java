@@ -1,14 +1,18 @@
+package com.github.pukkertje.TCPServer.cache;
+
+import com.github.pukkertje.TCPServer.server.model.NewsItem;
+
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Cache {
 
-    private static HashMap<String, CacheItem> _cache = new HashMap<String, CacheItem>();
+    private static ConcurrentHashMap<String, CacheItem> _cache = new ConcurrentHashMap<String, CacheItem>();
 
     // TTL in millis (~1 hour)
-    private static long TTL = 1000 * 60 * 60;
+    private final static long TTL = 1000 * 60 * 60;
 
     public static boolean inCache(String location) {
         if(!_cache.containsKey(location))

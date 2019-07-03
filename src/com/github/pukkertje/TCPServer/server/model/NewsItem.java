@@ -1,3 +1,5 @@
+package com.github.pukkertje.TCPServer.server.model;
+
 public class NewsItem {
 
     private String _title;

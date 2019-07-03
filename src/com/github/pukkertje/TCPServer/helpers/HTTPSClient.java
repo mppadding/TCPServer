@@ -1,3 +1,5 @@
+package com.github.pukkertje.TCPServer.helpers;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
 import java.io.InputStream;
